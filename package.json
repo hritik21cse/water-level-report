@@ -4,7 +4,8 @@
   "description": "Water level statistics using Raspberry Pi",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server"
+    "dev": "nodemon server",
+    "start": "node server"
   },
   "repository": {
     "type": "git",
