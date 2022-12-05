@@ -2,10 +2,10 @@
   "name": "water-level-report",
   "version": "1.0.0",
   "description": "Water level statistics using Raspberry Pi",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon server",
-    "start": "node server"
+    "dev": "nodemon index",
+    "start": "node index"
   },
   "repository": {
     "type": "git",
