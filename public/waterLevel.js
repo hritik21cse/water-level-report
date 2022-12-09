@@ -88,17 +88,17 @@ getWaterLevelReport();
 
 // POST Dummy Request Try
 
-// fetch(`http://localhost:3000/waterLevelDetails`, {
-//   method: "POST",
-//   headers: {
-//     "Content-Type": "application/json",
-//   },
-//   body: JSON.stringify({
-//     date: new Date().toLocaleDateString(),
-//     time: new Date().toLocaleTimeString(),
-//     waterLevel: 2,
-//     status: "normal",
-//     latitude: "16.23456 N",
-//     longitude: "80.4567 E",
-//   }),
-// });
+fetch(`https://water-level-report.vercel.app/waterLevelDetails`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    date: new Date().toLocaleDateString(),
+    time: new Date().toLocaleTimeString(),
+    waterLevel: 2,
+    status: "normal",
+    latitude: "16.23456 N", 
+    longitude: "80.4567 E",
+  }),
+});
