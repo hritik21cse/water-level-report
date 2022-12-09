@@ -6,7 +6,7 @@ const app = express()
 console.log('Welcome to Node')
 
 // serve up the static files
-app.use(express.static('public'))
+app.use(express.static(__dirname + '/public/'))
 
 
 const waterLevel = [
