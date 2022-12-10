@@ -90,7 +90,7 @@ function getDataFromServer(path) {
       "open",
       function (e) {
         console.log("Connected with Server");
-        fetch(`http://localhost:3000/waterLevelDetails`, {
+        fetch(`https://water-level-report.vercel.app/waterLevelDetails`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
