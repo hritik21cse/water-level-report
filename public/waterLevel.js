@@ -109,8 +109,8 @@ function getDataFromServer(path) {
     );
 
     source.addEventListener("error", function (e) {
-      console.log("e.eventPhase", e.eventPhase);
-      source.close();
+      console.log("e.eventPhase", e);
+      //source.close();
     });
   } else {
     alert(
