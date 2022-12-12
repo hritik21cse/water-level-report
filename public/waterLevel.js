@@ -119,25 +119,25 @@ function getDataFromServer(path) {
   }
 }
 
-getDataFromServer(`waterLevelReports`);
+//getDataFromServer(`waterLevelReports`);
 
-// async function getWaterLevelReport() {
-//   try {
-//     const hostName = window.location.hostname;
-//     console.log("host name is", hostName);
+async function getWaterLevelReport() {
+  try {
+    const hostName = window.location.hostname;
+    console.log("host name is", hostName);
 
-//     // let url =
-//     //   hostName === "localhost"
-//     //     ? `http://localhost:3000/waterLevelReports`
-//     //     : `https://water-level-report.vercel.app/waterLevelReports`;
+    let url =
+      hostName === "localhost"
+        ? `http://localhost:3000/waterLevelReports`
+        : `https://water-level-report.vercel.app/waterLevelReports`;
 
-//     // const response = await fetch(url);
-//     // let waterLevelReport = await response.json();
-//     // console.log("waterLevelReport is ", waterLevelReport);
-//     // await fetch(`http://localhost:3000//waterData`);
-//   } catch (error) {
-//     console.log("Error", error);
-//   }
-// }
+    const response = await fetch(url);
+    // let waterLevelReport = await response.json();
+    // console.log("waterLevelReport is ", waterLevelReport);
+    // await fetch(`http://localhost:3000//waterData`);
+  } catch (error) {
+    console.log("Error", error);
+  }
+}
 
-// getWaterLevelReport();
+getWaterLevelReport();
