@@ -41,13 +41,13 @@ app.get('/',(req,res)=>{
 })
 
 app.get("/waterLevelReports", (req, res) => {
-  // res.writeHead(200, {
-  //   "Content-Type": "text/event-stream",
-  //   "Cache-Control": "no-cache",
-  //   "Connection": "keep-alive",
-  // });
-  // waterDataTransferToClient = sendWaterLevelData(res);
-  res.json(initialData)
+  res.writeHead(200, {
+    "Content-Type": "text/event-stream",
+    "Cache-Control": "no-cache",
+    "Connection": "keep-alive",
+  });
+  waterDataTransferToClient = sendWaterLevelData(res);
+  //res.json(initialData)
 });
 
 app.post("/waterLevelDetails", express.json(), (req, res) => {
