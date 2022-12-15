@@ -9,29 +9,29 @@ console.log('Welcome to Node')
 app.use(express.static(__dirname + '/public/'))
 
 
-const initialData = [
-    {
-      date: new Date().toLocaleDateString(),
-      time: new Date().toLocaleTimeString(),
-      waterLevel: 11,
-      status: "danger",
-      latitude: "16.23456 N",
-      longitude: "80.4567 E",
-    },
-];
+// const initialData = [
+//     {
+//       date: new Date().toLocaleDateString(),
+//       time: new Date().toLocaleTimeString(),
+//       waterLevel: 11,
+//       status: "danger",
+//       latitude: "16.23456 N",
+//       longitude: "80.4567 E",
+//     },
+// ];
 
 
 let waterDataTransferToClient = null;
 
 const sendWaterLevelData = (waterDataRes) => {
-  waterDataRes.write("data: " + JSON.stringify(initialData) + "\n\n");
+  waterDataRes.write("data: " + JSON.stringify("Welcome") + "\n\n");
   return (data) => {
     waterDataRes.write("data: " + JSON.stringify(data) + "\n\n");
     console.log("sendWaterLevelData called");
     // waterDataRes.end();
-    setTimeout(() => {
-      waterDataRes.write("data: " + JSON.stringify(initialData) + "\n\n");
-    }, 5000);
+    // setTimeout(() => {
+    //   waterDataRes.write("data: " + JSON.stringify(initialData) + "\n\n");
+    // }, 5000);
   };
 };
   
@@ -50,7 +50,7 @@ app.get("/waterLevelReports", (req, res) => {
   //res.json(initialData)
 });
 
-app.post("/waterLevelDetails", express.json(), (req, res) => {
+app.post("/waterLevelDetails",express.urlencoded(extended=false), (req, res) => {
     console.log("post request", req.body);
     waterDataTransferToClient && waterDataTransferToClient([req.body]);
     res.send("received the request successfully");
