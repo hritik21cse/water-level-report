@@ -27,7 +27,7 @@ const sendWaterLevelData = (waterDataRes) => {
   waterDataRes.write("data: " + JSON.stringify("Welcome") + "\n\n");
   return (data) => {
     waterDataRes.write("data: " + JSON.stringify(data) + "\n\n");
-    console.log("sendWaterLevelData called");
+    //console.log("sendWaterLevelData called");
     // waterDataRes.end();
     // setTimeout(() => {
     //   waterDataRes.write("data: " + JSON.stringify(initialData) + "\n\n");
@@ -51,7 +51,7 @@ app.get("/waterLevelReports", (req, res) => {
 });
 
 app.post("/waterLevelDetails",express.urlencoded(extended=false), (req, res) => {
-    console.log("post request", req.body);
+    //console.log("post request", req.body);
     waterDataTransferToClient && waterDataTransferToClient([req.body]);
     res.send("received the request successfully");
 });
