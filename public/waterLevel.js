@@ -76,9 +76,8 @@ function getDataFromServer(path) {
     source.addEventListener(
       "message",
       function (e) {
-        console.log("data", e.data);
-        if (e.data !== "Welcome") {
-          const waterLevelData = JSON.parse(e.data);
+        const data = JSON.parse(e.data);
+        if (data !== "Welcome") {
           console.log("waterLevelData", waterLevelData);
           addWaterLevelDetails(waterLevelData);
         }
