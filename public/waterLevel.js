@@ -77,9 +77,9 @@ function getDataFromServer(path) {
       "message",
       function (e) {
         const data = JSON.parse(e.data);
-        if (data !== "Welcome") {
-          console.log("waterLevelData", waterLevelData);
-          addWaterLevelDetails(waterLevelData);
+        if (Array.isArray(data) && data.length ) {
+          console.log('waterLevelData', data)
+          addWaterLevelDetails(data);
         }
       },
       false
